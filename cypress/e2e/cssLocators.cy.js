@@ -10,6 +10,10 @@ describe('CSSLocators', ()=> {
         cy.get(".search-box__button--1oH7").click()
 
         cy.get(".JrAyI").contains("T-shirts")   //Assertion
+
+        cy.get(".JrAyI").contains("T-shirts")   //Assertion
+
+        
         
     })
 })
