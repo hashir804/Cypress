@@ -11,8 +11,6 @@ describe('CSSLocators', ()=> {
 
         cy.get(".JrAyI").contains("T-shirts")   //Assertion
 
-        cy.get(".JrAyI").contains("T-shirts")   //Assertion
-
         
         
     })
