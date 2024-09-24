@@ -6,7 +6,6 @@ describe('My First Test', () => {
 
         cy.title().should('eq', 'OrangeHRM')
 
-
     })
 
     
@@ -28,7 +27,6 @@ describe('My First Test', () => {
 
         cy.title().should('eq', 'OrangeHRM888')
 
-        
     })
 
 

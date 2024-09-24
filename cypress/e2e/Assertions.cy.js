@@ -1,3 +1,5 @@
+const { expect } = require("chai")
+
 describe("Assertions demo", ()=> {
 
     it("Implicit assertions", ()=>{
@@ -33,21 +35,49 @@ describe("Assertions demo", ()=> {
         cy.get("input[placeholder='Username']").type("Admin") //provide a value in the input box
         cy.get("input[placeholder='Username']").should('have.value','Admin') //check value
 
+   })
+
+
+      it("Explicit assertions", ()=>{
+
+        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+
+        cy.get("input[placeholder='Username']").type("Admin")
+
         cy.get("input[placeholder='Password']").type("admin123")  //provide password value
+
         cy.get("input[placeholder='Password']").should('have.value','admin123') //verify password value
 
-        cy.get('.oxd-button').click();
+        cy.get('.oxd-button').click(); //click login button
+
         cy.url().should("eq","https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index")
 
+        let expName="Yug ShahKanpurwarKanpurwar";
+
+        cy.get('.oxd-userdropdown-name').then( (x)=>{
+
+
+                let actName= x.text()
+
+                //BDD Style
+                expect(actName).to.equal(expName)
+                // expect(actName).to.not.equal(expName)
+
+                //TDD Style
+                assert.equal(actName,expName)
+                // assert.not.equal(actName.expName)
+
+                
+            })
 
 
 
 
+     })
+
+        
 
 
 
-
-    })
+    
 })
-
-// 813.7 823.7  833.7 
