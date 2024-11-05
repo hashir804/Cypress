@@ -38,7 +38,7 @@ describe("Assertions demo", ()=> {
    })
 
 
-      it("Explicit assertions", ()=>{
+    it("Explicit assertions", ()=>{
 
         cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
@@ -48,7 +48,8 @@ describe("Assertions demo", ()=> {
 
         cy.get("input[placeholder='Password']").should('have.value','admin123') //verify password value
 
-        cy.get('.oxd-button').click(); //click login button
+        cy.get('.oxd-button').click(); //click login buttons
+
 
         cy.url().should("eq","https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index")
 
@@ -70,10 +71,12 @@ describe("Assertions demo", ()=> {
                 
             })
 
+        
 
 
 
-     })
+
+    })
 
         
 
